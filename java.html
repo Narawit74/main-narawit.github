@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narawit Yocharee - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
+        <a href="index.html" class="nav__logo">
+          <i class="ri-pass-pending-fill"></i> Narawit Yo&copy;haree
+        </a>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line nav__burger"></i>
+          <i class="ri-close-line nav__close"></i>
+        </div>
+      </div>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Dashboard</a></li>
+          <li class="dropdown__item">
+            <div class="nav__link">
+              Main <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            </div>
+            <ul class="dropdown__menu">
+              <li>
+                <a href="portfolio.html" class="dropdown__link">
+                  <i class="ri-pass-valid-fill"></i> Portfolio
+                </a>
+              </li>
+              <li class="dropdown__subitem">
+                <div class="dropdown__link">
+                  <i class="ri-indent-decrease"></i> Examples <i class="ri-add-line dropdown__add"></i>
+                </div>
+                <ul class="dropdown__submenu">
+                  <li>
+                    <a href="java.html" class="dropdown__sublink">
+                      <i class="ri-javascript-fill"></i> JavaScript
+                    </a>
+                  </li>
+                  <li>
+                    <a href="api.html" class="dropdown__sublink">
+                      <i class="ri-bard-fill"></i> API
+                    </a>
+                  </li>
+                  <li>
+                    <a href="chart.html" class="dropdown__sublink">
+                      <i class="ri-bar-chart-box-fill"></i> Chart
+                    </a>
+                  </li>
+                  <li>
+                    <a href="sheets.html" class="dropdown__sublink">
+                      <i class="ri-arrow-down-circle-line"></i> Sheets
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown__item">
+            <div class="nav__link">
+              Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+            </div>
+            <ul class="dropdown__menu">
+              <li>
+                <a href="#" class="dropdown__link">
+                  <i class="ri-user-line"></i> Profiles
+                </a>
+              </li>
+              <li>
+                <a href="#" class="dropdown__link">
+                  <i class="ri-lock-line"></i> Accounts
+                </a>
+              </li>
+              <li>
+                <a href="#" class="dropdown__link">
+                  <i class="ri-message-3-line"></i> Messages
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- <li><a href="#" class="nav__link">Contact</a></li> -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="sec-4">
+    <h1 class="animate">Java</h1>
+    <p class="animate">Java Script Examples!</p>
+    <h6>&nbsp;</h6>
+    <div class="animate">
+    <div class="containerlab" style="width: 400px;">
+        <label><strong>Lab 1 </strong></strong></label><button class="button button4" onclick="loginUser()">Login</button><label> <strong>User :</strong> admin <strong>Pass :</strong> 123456</label><br>
+        <label><strong>Lab 2 </strong><button class="button button4" onclick="calculateSum()">Calculate Sum</button> <button class="button button4" onclick="calculateMul()"> Calculate Multiplication</button><br>
+        <label><strong>Lab 3 </strong><button class="button button4" onclick="createObject()">Create Object</button><br>
+        <label><strong>Lab 4 </strong><button class="button button4" onclick="convertDaysToSeconds()">Convert Days to Seconds</strong></button><br>
+        <label><strong>Lab 5 </strong><button class="button button4" onclick="convertTemperature()">Convert Temperature</button>
+        </div>
+    </div>
+  </section>
+
+  <footer class="footer-distributed">
+    <div class="footer-right">
+      <a href="https://www.facebook.com/narawit.ny/"><i class="ri-facebook-fill"></i></a>
+      <a href="https://twitter.com/"><i class="ri-twitter-fill"></i></a>
+      <a href="https://www.youtube.com/@Nack2547"><i class="ri-youtube-fill"></i></a>
+      <a href="https://github.com/Narawit74"><i class="ri-github-fill"></i></a>
+    </div>
+    <div class="footer-left">
+      <p>Khon Kaen Technical College Narawit Yocharee &copy; 2023</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

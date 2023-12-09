@@ -145,7 +145,7 @@ document.getElementById('apiButton').addEventListener('click', async function ()
 //API 2
         // Function to fetch a random GIF from Giphy API
         async function getRandomGif() {
-            const apiKey = 'YOUR_GIPHY_API_KEY'; // Replace with your Giphy API key
+            const apiKey = 'LeAY0OSXO4kc91fDhmQ93JUThGqivIWGY4MycRtmoxU'; // Replace with your Giphy API key
             const endpoint = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 
             try {

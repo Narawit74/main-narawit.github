@@ -120,31 +120,29 @@ function convertTemperature() {
 }
 
 //API 
+document.getElementById('apiButton').addEventListener('click', async function () {
+  const url = 'https://opencritic-api.p.rapidapi.com/game/search?criteria=the%20witcher%203';
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '315fd06726mshf1170d97ef3e690p1f54bajsnf6e8130686fb',
+      'X-RapidAPI-Host': 'opencritic-api.p.rapidapi.com'
+    }
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const result455 = await response.text();
+    alert(result455);
+    // Handle the result as needed
+  } catch (error) {
+    console.error(error);
+    // Handle errors
+  }
+});
 
 
 //API 2
-        // Function to fetch a random image from the provided URL
-        async function getRandomImage22() {
-            const imageUrl = 'https://random.imagecdn.app/v1/image?width=500&height=150&category=buildings&format=json';
-
-            try {
-                const response = await fetch(imageUrl);
-                const data = await response.json();
-
-                if (data && data.url) {
-                    const imageUrl = data.url;
-                    document.getElementById('random-image').src = imageUrl;
-                } else {
-                    console.error('Error fetching image');
-                }
-            } catch (error) {
-                console.error('Error fetching image:', error);
-            }
-        }
-
-        // Initial load
-        getRandomImage();
-
 
 //API 3
 document.getElementById('apiButton3').addEventListener('click', async function () {

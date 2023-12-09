@@ -144,7 +144,7 @@ document.getElementById('apiButton').addEventListener('click', async function ()
 
 //API 2
 document.getElementById('apiButton2').addEventListener('click', async function () {
-  const url = ' https://api.giphy.com/v1/gifs/random';
+  const url = 'https://api.giphy.com/v1/gifs/random';
 
   try {
     const response = await fetch(url);

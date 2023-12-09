@@ -143,27 +143,32 @@ document.getElementById('apiButton').addEventListener('click', async function ()
 
 
 //API 2
-document.getElementById('apiButton2').addEventListener('click', async function () {
-  const apiKey = 'YOUR_GIPHY_API_KEY'; // Replace with your Giphy API key
-  const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=dog`;
+        // Function to fetch a random GIF from Giphy API
+        async function getRandomGif() {
+            const apiKey = 'YOUR_GIPHY_API_KEY'; // Replace with your Giphy API key
+            const endpoint = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
 
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
+            try {
+                const response = await fetch(endpoint);
+                const data = await response.json();
 
-    // Check if the response contains a valid image
-    if (data.data && data.data.image_url) {
-      // Display the result in a container
-      const dogImageContainer = document.getElementById('dogImageContainer');
-      dogImageContainer.innerHTML = `<img src="${data.data.image_url}" alt="Random Dog Image" style="max-width: 100%;">`;
-    } else {
-      console.error('Invalid response or missing image data');
-    }
-  } catch (error) {
-    console.error(error);
-    // Handle errors
-  }
-});
+                if (data.data && data.data.image_original_url) {
+                    const imageUrl = data.data.image_original_url;
+                    document.getElementById('random-gif').src = imageUrl;
+                } else {
+                    console.error('Error fetching GIF');
+                }
+            } catch (error) {
+                console.error('Error fetching GIF:', error);
+            }
+        }
+
+        // Initial load
+        getRandomGif();
+
+        // Event listener to change the GIF on button click
+        document.getElementById('random-gif').addEventListener('click', getRandomGif);
+
 
 
 //API 3

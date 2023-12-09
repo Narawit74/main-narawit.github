@@ -1,9 +1,9 @@
 [
-    { "label": "Red", "value": 500 },
-    { "label": "Blue", "value": 130 },
+    { "label": "Red", "value": 80 },
+    { "label": "Blue", "value": 90 },
     { "label": "Yellow", "value": 103 },
-    { "label": "Green", "value": 51 },
-    { "label": "Purple", "value": 29 },
+    { "label": "Green", "value": 40 },
+    { "label": "Purple", "value": 39 },
     { "label": "Orange", "value": 83 }
   ]
   

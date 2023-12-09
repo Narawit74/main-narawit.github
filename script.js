@@ -143,17 +143,16 @@ document.getElementById('apiButton').addEventListener('click', async function ()
 
 
 //API 2
-        // Function to fetch a random image from Unsplash API
+        // Function to fetch a random image from the provided URL
         async function getRandomImage() {
-            const unsplashAccessKey = 'LeAY0OSXO4kc91fDhmQ93JUThGqivIWGY4MycRtmoxU'; // Replace with your Unsplash Access Key
-            const unsplashEndpoint = `https://api.unsplash.com/photos/random?query=apex-legends&client_id=${unsplashAccessKey}`;
+            const imageUrl = 'https://random.imagecdn.app/v1/image?width=500&height=150&category=buildings&format=json';
 
             try {
-                const response = await fetch(unsplashEndpoint);
+                const response = await fetch(imageUrl);
                 const data = await response.json();
 
-                if (data && data.urls && data.urls.full) {
-                    const imageUrl = data.urls.full;
+                if (data && data.url) {
+                    const imageUrl = data.url;
                     document.getElementById('random-image').src = imageUrl;
                 } else {
                     console.error('Error fetching image');

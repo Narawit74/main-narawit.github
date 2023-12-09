@@ -120,26 +120,6 @@ function convertTemperature() {
 }
 
 //API 
-document.getElementById('apiButton').addEventListener('click', async function () {
-  const url = 'https://opencritic-api.p.rapidapi.com/game/search?criteria=the%20witcher%203';
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '315fd06726mshf1170d97ef3e690p1f54bajsnf6e8130686fb',
-      'X-RapidAPI-Host': 'opencritic-api.p.rapidapi.com'
-    }
-  };
-
-  try {
-    const response = await fetch(url, options);
-    const result455 = await response.text();
-    alert(result455);
-    // Handle the result as needed
-  } catch (error) {
-    console.error(error);
-    // Handle errors
-  }
-});
 
 
 //API 2

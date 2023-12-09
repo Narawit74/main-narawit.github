@@ -144,7 +144,7 @@ document.getElementById('apiButton').addEventListener('click', async function ()
 
 //API 2
         // Function to fetch a random image from the provided URL
-        async function getRandomImage() {
+        async function getRandomImage22() {
             const imageUrl = 'https://random.imagecdn.app/v1/image?width=500&height=150&category=buildings&format=json';
 
             try {

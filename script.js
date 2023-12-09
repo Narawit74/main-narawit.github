@@ -144,20 +144,27 @@ document.getElementById('apiButton').addEventListener('click', async function ()
 
 //API 2
 document.getElementById('apiButton2').addEventListener('click', async function () {
-  const url = 'https://api.giphy.com/v1/gifs/random';
+  const apiKey = 'YOUR_GIPHY_API_KEY'; // Replace with your Giphy API key
+  const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=dog`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
 
-    // Display the result in a container
-    const dogImageContainer = document.getElementById('dogImageContainer');
-    dogImageContainer.innerHTML = `<img src="${data.message}" alt="Random Dog Image" style="max-width: 100%;">`;
+    // Check if the response contains a valid image
+    if (data.data && data.data.image_url) {
+      // Display the result in a container
+      const dogImageContainer = document.getElementById('dogImageContainer');
+      dogImageContainer.innerHTML = `<img src="${data.data.image_url}" alt="Random Dog Image" style="max-width: 100%;">`;
+    } else {
+      console.error('Invalid response or missing image data');
+    }
   } catch (error) {
     console.error(error);
     // Handle errors
   }
 });
+
 
 //API 3
 document.getElementById('apiButton3').addEventListener('click', async function () {

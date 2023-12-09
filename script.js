@@ -143,32 +143,28 @@ document.getElementById('apiButton').addEventListener('click', async function ()
 
 
 //API 2
-        // Function to fetch a random GIF from Giphy API
-        async function getRandomGif() {
-            const apiKey = 'LeAY0OSXO4kc91fDhmQ93JUThGqivIWGY4MycRtmoxU'; // Replace with your Giphy API key
-            const endpoint = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`;
+        // Function to fetch a random image from Unsplash API
+        async function getRandomImage() {
+            const unsplashAccessKey = 'LeAY0OSXO4kc91fDhmQ93JUThGqivIWGY4MycRtmoxU'; // Replace with your Unsplash Access Key
+            const unsplashEndpoint = `https://api.unsplash.com/photos/random?query=apex-legends&client_id=${unsplashAccessKey}`;
 
             try {
-                const response = await fetch(endpoint);
+                const response = await fetch(unsplashEndpoint);
                 const data = await response.json();
 
-                if (data.data && data.data.image_original_url) {
-                    const imageUrl = data.data.image_original_url;
-                    document.getElementById('random-gif').src = imageUrl;
+                if (data && data.urls && data.urls.full) {
+                    const imageUrl = data.urls.full;
+                    document.getElementById('random-image').src = imageUrl;
                 } else {
-                    console.error('Error fetching GIF');
+                    console.error('Error fetching image');
                 }
             } catch (error) {
-                console.error('Error fetching GIF:', error);
+                console.error('Error fetching image:', error);
             }
         }
 
         // Initial load
-        getRandomGif();
-
-        // Event listener to change the GIF on button click
-        document.getElementById('random-gif').addEventListener('click', getRandomGif);
-
+        getRandomImage();
 
 
 //API 3

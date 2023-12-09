@@ -103,8 +103,32 @@
         <div class="api-card">
           <center>
             <button id="apiButton" class="button button4">Search for "The Witcher 3"</button>
-<!--             <img id="random-image" alt="Random Image" width="500" height="300">
-            <button onclick="getRandomImage22()">Get Random Image</button> -->
+            <div class="api">
+              <img src="img/fox.jpg" id="foxImage" alt="" width="300" height="200"><br>
+              <button class="btn2" onclick="getRandomFox()">Get Random</button>
+          </div>
+          <script>
+  function getRandomFox() {
+          const apiUrl = 'https://api.thecatapi.com/v1/images/search';
+  
+          fetch(apiUrl)
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error(`Network response was not ok: ${response.status}`);
+                  }
+                  return response.json();
+              })
+              .then(data => {
+                  console.log(data);
+                  const foxImage = document.getElementById('foxImage');
+                  foxImage.src = data[0].url; // Access the first image URL in the response array
+                  foxImage.alt = 'Random Fox';
+              })
+              .catch(error => {
+                  console.error('Fetch error:', error);
+              });
+      }
+      </script>
             <div id="bitcoinPriceContainer"></div>
             <button id="apiButton3" class="button button4">Get Bitcoin Price</button>
           </center>
